@@ -6,13 +6,10 @@
 case $1 in
   pre)
   # Shutdown
-    echo "we are suspending at $(date)..." >> /tmp/systemd_suspend_test
     modprobe -rv 8852au
     ;;
   post)
   # Resume
-    echo "...and we are back from $(date)" >> /tmp/systemd_suspend_test
-    #sleep 15
     modprobe -v 8852au
     ;;
 esac
